@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - openai_api_key=${OPENAI_API_KEY}
+      - MODEL_CREATIVE=${MODEL_CREATIVE:-gpt-4-turbo}
+      - MODEL_STRUCTURED=${MODEL_STRUCTURED:-gpt-4-turbo}
+      - TEMP_CREATIVE=${TEMP_CREATIVE:-0.7}
+      - TEMP_STRUCTURED=${TEMP_STRUCTURED:-0.2}
+      - debug=${DEBUG:-false}
+      - log_level=${LOG_LEVEL:-INFO}
+    volumes:
+      - .:/app
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    networks:
+      - restaurant-network
+
+networks:
+  restaurant-network:
+    driver: bridge

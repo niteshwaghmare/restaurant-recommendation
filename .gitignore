@@ -1,0 +1,106 @@
+# ==========================================
+# FastAPI & Python Core
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ==========================================
+# Virtual Environments (Local Development)
+# ==========================================
+.venv/
+venv/
+ENV/
+env.bak/
+venv.bak/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ==========================================
+# LLM / AI / Data (Crucial for AI projects)
+# ==========================================
+# Never commit large model weights, embeddings, or local vector databases
+*.bin
+*.pt
+*.pth
+*.pkl
+*.h5
+*.gguf
+*.onnx
+
+# Local model cache directories (Hugging Face, etc.)
+.cache/
+hf_cache/
+models/
+weights/
+
+# Vector DB storage (e.g., ChromaDB, FAISS, Milvus local files)
+chroma_db/
+faiss_index/
+data/
+storage/
+
+# Large log files from tracing/evals (LangChain, LangSmith, Phoenix, etc.)
+*.log
+eval_results/
+
+# ==========================================
+# Environment Variables & Secrets (CRITICAL)
+# ==========================================
+# Never commit your OpenAI, Anthropic, or database credentials!
+.env
+.env.[a-zA-Z]*
+!.env.example     # DO commit the example template to show required keys
+.secrets
+*.pem
+*.key
+
+# ==========================================
+# Docker & System Files
+# ==========================================
+# Ignore local docker overrides if used purely for local debugging
+docker-compose.override.yml
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ==========================================
+# Testing & IDEs
+# ==========================================
+.pytest_cache/
+.coverage
+htmlcov/
+flake8
+.mypy_cache/
+.ruff_cache/
+
+.vscode/
+.idea/
+*.swp
+*.swo
